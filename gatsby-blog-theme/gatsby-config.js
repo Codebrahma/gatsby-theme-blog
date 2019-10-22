@@ -4,15 +4,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/posts/`,
-      },
+        path: `${__dirname}/posts/`
+      }
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        typeName: 'Post',
+        typeName: "Post",
         extensions: [`.mdx`, `.md`]
       }
+    },
+    {
+      resolve: `gatsby-transformer-remark`
     }
   ]
-}
+};
