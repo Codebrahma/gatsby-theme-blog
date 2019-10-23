@@ -29,7 +29,7 @@ const groupPostsByUnique = (field, posts) => {
       ...grouped,
       [unique]: posts.filter(post => {
         try {
-          return post.childMdx.frontmatter[field].includes(unique);
+          return post.frontmatter[field].includes(unique);
         } catch (err) {
           return false;
         }
