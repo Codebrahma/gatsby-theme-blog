@@ -1,10 +1,11 @@
 module.exports = {
   plugins: [
+    `gatsby-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/posts/`
+        path: 'posts'
       }
     },
     {

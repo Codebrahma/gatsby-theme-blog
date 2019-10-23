@@ -19,12 +19,17 @@
     "react-dom": "^16.10.2"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.21",
+    "@emotion/styled": "^10.0.17",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "@mdx-js/tag": "^0.20.3",
-    "bricks": "^1.1.4",
+    "bricks": "github:codebrahma/bricks",
+    "emotion-theming": "^10.0.19",
     "gatsby-plugin-mdx": "^1.0.52",
     "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-transformer-remark": "^2.6.30"
+    "gatsby-theme-ui": "^0.2.0",
+    "gatsby-transformer-remark": "^2.6.30",
+    "theme-ui": "^0.2.44"
   }
 }

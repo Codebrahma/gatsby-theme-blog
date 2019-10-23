@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 
 const PostList = ({ posts }) => {
-  console.log(posts);
   return (
     <>
       <h2>Blogs List</h2>
