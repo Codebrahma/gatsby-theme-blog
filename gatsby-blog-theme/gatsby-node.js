@@ -109,7 +109,7 @@ const createPages = (type, postArray, createPage) => {
 
 exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const { createPage } = actions;
-  const basePath = options.basePath || "/";
+  const basePath = options.basePath || '/blog';
 
   const result = await graphql(`
     {
@@ -149,9 +149,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     {
       createPage,
       component: require.resolve("./src/templates/posts.js"),
-      pathTemplate: "/blog/pgnum/",
+      pathTemplate: `${basePath}/pgnum/`,
       type: "all",
-      value: null
+      value: null,
     },
     posts.sort(
       (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
@@ -161,7 +161,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   //create each individual blog post
   posts.forEach(post => {
     const { link } = post.frontmatter;
-    console.log(link);
     actions.createPage({
       path: `${link}/`,
       component: require.resolve("./src/templates/post.js"),

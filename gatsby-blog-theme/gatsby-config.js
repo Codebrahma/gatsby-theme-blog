@@ -1,11 +1,11 @@
-module.exports = {
+module.exports = ({ contentPath="posts", basePath="/" }) => ({
   plugins: [
     `gatsby-theme-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: "posts"
+        path: contentPath
       }
     },
     `gatsby-transformer-sharp`,
@@ -15,6 +15,9 @@ module.exports = {
       options: {
         typeName: "Post",
         extensions: [`.mdx`, `.md`],
+        deaultLayouts: {
+          default: require.resolve('./src/templates/post.js')
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -31,4 +34,4 @@ module.exports = {
       resolve: `gatsby-transformer-remark`
     }
   ]
-};
+});

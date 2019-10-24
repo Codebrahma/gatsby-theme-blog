@@ -13,3 +13,7 @@
 ```
   yarn workspace site develop
 ```
+
+## Custom Layout
+
+* Create a file `src/gatsby-blog-theme/component/layout.js` in your site for Component Shadowing.
