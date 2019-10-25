@@ -5,7 +5,7 @@
 
 ## Install all the dependencies
 ```
-  cd gatsby-blog-theme
+  cd gatsby-theme-blog
   yarn
 ```
 
@@ -17,3 +17,5 @@
 ## Custom Layout
 
 * Create a file `src/gatsby-blog-theme/component/layout.js` in your site for Component Shadowing.
+=======
+```
