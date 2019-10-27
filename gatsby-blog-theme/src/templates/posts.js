@@ -119,7 +119,6 @@ const Posts = ({
     currentPage,
     totalPages,
     linkBase,
-    linkRoot,
     type,
     value
   }

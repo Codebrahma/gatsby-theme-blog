@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { Flex, H1, Box, I } from "bricks";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import CategoryLink from "../components/categorylink";
-import { getCategory, slugify } from "../utils"
+import { getCategory, slugify } from "../utils";
 import PlainLink from "../components/link";
 import Layout from "../components/layout";
 

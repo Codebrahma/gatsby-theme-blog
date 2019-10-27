@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
-import {Link} from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
 
-const Wrapper = styled('div')`
+const Wrapper = styled("div")`
   display: flex;
   justify-content: flex-start;
 `;
@@ -28,7 +28,7 @@ const Pagination = ({
   isLastPage,
   currentPage,
   totalPages,
-  linkBase,
+  linkBase
 }) => (
   <Wrapper>
     {!isFirstPage && currentPage !== 2 && (
@@ -38,7 +38,9 @@ const Pagination = ({
     )}
     {!isFirstPage && (
       <PaginationLink
-        to={`${linkBase}/${currentPage - 1 === 1 ? '' : '/page/'+ (currentPage - 1)}/`}
+        to={`${linkBase}/${
+          currentPage - 1 === 1 ? "" : "/page/" + (currentPage - 1)
+        }/`}
       >
         ‹ newer posts
       </PaginationLink>
@@ -67,7 +69,7 @@ Pagination.propTypes = {
   isLastPage: PropTypes.bool.isRequired,
   currentPage: PropTypes.number.isRequired,
   totalPages: PropTypes.number.isRequired,
-  linkBase: PropTypes.string.isRequired,
+  linkBase: PropTypes.string.isRequired
 };
 
 export default Pagination;

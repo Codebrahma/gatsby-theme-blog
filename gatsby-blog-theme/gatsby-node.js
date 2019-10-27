@@ -50,9 +50,9 @@ const groupPostsByUnique = (field, posts) => {
 //
 // Adapted from https://github.com/pixelstew/gatsby-paginate
 const paginate = (
-  { pathTemplate, createPage, component, type, value, linkRoot = "blog" },
+  { pathTemplate, createPage, component, type, value, itemsPerPage },
   posts,
-  perpage = 7
+  perpage = itemsPerPage || 7
 ) =>
   posts
     // 1 group them by page number and posts in that page
@@ -81,7 +81,6 @@ const paginate = (
           currentPage,
           totalPages,
           isFirstPage,
-          linkRoot,
           linkBase: pathTemplate.replace("pgnum", "").replace("//", "/"),
           isLastPage: currentPage === totalPages
         }
@@ -110,6 +109,7 @@ const createPages = (type, postArray, createPage) => {
 exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const { createPage } = actions;
   const basePath = options.basePath || '/blog';
+  const itemsPerPage = options.itemsPerPage;
 
   const result = await graphql(`
     {
@@ -138,7 +138,33 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     return;
   }
 
-  let posts = result.data.posts.nodes;
+  // remove the unpublished and posts which dont have a URL and is not published
+  let posts = result.data.posts.nodes.filter(post => {
+    try {
+      let fm = post.frontmatter
+      return fm.publish !== false && fm.link != null
+    } catch (err) {
+      return false
+    }
+  })
+
+  posts = posts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date) -
+      new Date(a.frontmatter.date)
+  )
+
+  //create each individual blog post
+  posts.forEach(post => {
+    const { link } = post.frontmatter;
+    actions.createPage({
+      path: `${link}/`,
+      component: require.resolve("./src/templates/post.js"),
+      context: {
+        link
+      }
+    });
+  });
 
   //create pages for tags, category, author
   createPages("tags", posts, createPage);
@@ -152,21 +178,10 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       pathTemplate: `${basePath}/pgnum/`,
       type: "all",
       value: null,
+      itemsPerPage
     },
     posts.sort(
       (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
     )
   );
-
-  //create each individual blog post
-  posts.forEach(post => {
-    const { link } = post.frontmatter;
-    actions.createPage({
-      path: `${link}/`,
-      component: require.resolve("./src/templates/post.js"),
-      context: {
-        link
-      }
-    });
-  });
 };
