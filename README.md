@@ -16,8 +16,9 @@
 
 Key | Default Value | Description
 --- | --- | --- |
-`basePath` | `"/"` | Root URL to all blog posts
+`basePath` | `"/blog"` | Root URL to all blog posts
 `contentPath` | `"posts"` | Location of blog posts
+`itemsPerPage` | `7` | Number of items per page
 
 ### Example Usage
 ```js
@@ -28,7 +29,8 @@ module.exports = {
       resolve: `gatsby-blog-theme`,
       options: {
         contentPath: 'content/posts',
-        basePath: '/blog',
+        basePath: '/content/blog',
+        itemsPerPage: 5
       }
     }
   ]
