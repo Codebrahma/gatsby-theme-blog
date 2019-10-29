@@ -6,6 +6,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
