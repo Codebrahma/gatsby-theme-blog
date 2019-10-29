@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react';
 import { Link } from "gatsby";
 import { P, H3, H4, I, Box, Text, HorizontalRule } from "bricks";
 import PlainLink from "../components/link";
 import styled from "@emotion/styled";
 import { space } from "styled-system";
+import { Helmet } from "react-helmet";
 import { css } from "bricks";
 import Layout from "../components/layout";
 import Pagination from "../components/pagination";
 import { getCategory, getTags, slugify } from "../utils";
 import CategoryLink from "../components/categorylink";
+import theme from "../theme";
 
 const isLast = (arr, index) => arr.length - 1 === index;
 
@@ -46,13 +48,13 @@ const ReadPostLink = styled(Link)(
     p: "2px",
     display: "inline-block",
     "&:hover": {
-      bg: "black.1",
-      color: "tint"
+      bg: `${theme.colors.black[1]}`,
+      color: `${theme.colors.tint}`
     },
     ":visited": {
       "&:hover": {
-        bg: "black.1",
-        color: "tint"
+        bg: `${theme.colors.black[1]}`,
+        color: `${theme.colors.tint}`
       }
     }
   })
@@ -71,8 +73,8 @@ const HeadingLink = styled(Link)(
     display: "inline-block",
     textDecoration: "none",
     "&:hover": {
-      backgroundColor: "primary",
-      color: "secondary"
+      backgroundColor: `${theme.colors.primary}`,
+      color: `${theme.colors.secondary}`
     }
   })
 );
@@ -127,6 +129,15 @@ const Posts = ({
 
   return (
     <Layout>
+      <Helmet
+        title={getHeading({
+          isFirstPage,
+          currentPage,
+          totalPages,
+          type,
+          value
+        })}
+      />
       <H4 css={css({ color: "black.1" })}>
         {getHeading({
           isFirstPage,
