@@ -1,21 +1,31 @@
+<p align="center">
+  <a href="https://www.codebrahma.com">
+    <img alt="Gatsby" src="https://oldwebsite.codebrahma.com/wp-content/themes/codebrahma/public/img/cb_logo_small@2x.png" width="100" />
+  </a>
+  <a href="https://www.gatsbyjs.org">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
 <h1 align="center">Gatsby Theme Blog</h1>
 
-A Gatsby theme for creating a blog.
+![Twitter Follow](https://img.shields.io/twitter/follow/codebrahma?style=social)
 
-## Using the Theme
+:fire: A Gatsby theme for creating a blog.
+
+## Installation
 ```bash
-  [x] npm install @codebrahma/gatsby-theme-blog
+  [x] npm install --save @codebrahma/gatsby-theme-blog
 ```
 
-## Usage
+## :rocket: Usage
 
 ### Theme Options
 
-Key | Default Value | Description
---- | --- | --- |
-`basePath` | `"/blog"` | Root URL to all blog posts
-`contentPath` | `"posts"` | Location of blog posts
-`itemsPerPage` | `7` | Number of items per page
+|Key            | Default Value | Description                |
+|---------------|---------------|----------------------------|
+|`basePath`     | `"/blog"`     | Root URL to all blog posts |
+|`contentPath`  | `"posts"`     | Location of blog posts     |
+|`itemsPerPage` | `7`           | Number of items per page   |
 
 ### Example Usage
 ```js
@@ -41,7 +51,7 @@ module.exports = {
   touch content/posts/hello-world/hello-world.md
 ```
 
-A sample post is below:
+💡 A sample post is below:
 
 ```
 ---
@@ -70,8 +80,7 @@ Hello World! This is my first post! I'll have great features enabled by default,
 - and more!
 ```
 
-
-### Additional Configuration:
+### :sparkles: Additional Configuration:
 
 In addition to the theme options you can add your own Layout component to the blogs.
 * Create a file `src/gatsby-blog-theme/component/layout.js` in your site for Component Shadowing.
@@ -96,6 +105,15 @@ const Layout = ({ children }) => {
   )
 }
 ```
+
+## :handshake: Contributing
+
+Contributions, issues and feature requests are welcome.
+<br/>
+Feel free to check [issues](https://github.com/Codebrahma/gatsby-theme-blog/issues) page if you want to contribute.
+
+## :pencil: Licence
+ This Project is MIT licensed
 
 <hr />
 
