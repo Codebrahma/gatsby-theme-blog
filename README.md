@@ -111,9 +111,9 @@ const Layout = ({ children }) => {
 Contributions, issues and feature requests are welcome.
 <br/>
 Feel free to check [issues](https://github.com/Codebrahma/gatsby-theme-blog/issues) page if you want to contribute.
-
+bug: 
 ## :pencil: Licence
- This Project is MIT licensed
+ This project is [MIT](https://github.com/Codebrahma/gatsby-theme-blog/blob/master/LICENSE) licensed
 
 <hr />
 
