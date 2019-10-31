@@ -8,8 +8,6 @@
 </p>
 <h1 align="center">Gatsby Theme Blog</h1>
 
-![Twitter Follow](https://img.shields.io/twitter/follow/codebrahma?style=social)
-
 :fire: A Gatsby theme for creating a blog.
 
 ## Installation
@@ -80,10 +78,9 @@ Hello World! This is my first post! I'll have great features enabled by default,
 - and more!
 ```
 
-### :sparkles: Additional Configuration:
+## :sparkles: Additional Configuration:
 
-In addition to the theme options you can add your own Layout component to the blogs.
-* Create a file `src/gatsby-blog-theme/component/layout.js` in your site for Component Shadowing.
+* In addition to the theme options you can add your own Layout component to the blogs. Create a file `src/gatsby-blog-theme/component/layout.js` in your site for Component Shadowing.
 
 A sample layout file:
 
@@ -106,12 +103,34 @@ const Layout = ({ children }) => {
 }
 ```
 
+## :art: Theming
+* Add your own set of design tokens to create a whole new look for the theme. Take a look at current [theme file](https://github.com/Codebrahma/gatsby-theme-blog/blob/master/gatsby-blog-theme/src/theme.js) and get creative. Upgrade by creating your own `theme.js` file.
+
+* Example:
+```js
+// src/gatsby-blog-theme/component/layout.js
+import React from 'react'
+import theme from './theme'
+import { ThemeProvider } from 'theme-ui'
+
+const Layout = ({ children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <main>
+        {children}
+      </main>
+    </ThemeProvider>
+  )
+}
+```
+<hr />
+
 ## :handshake: Contributing
 
 Contributions, issues and feature requests are welcome.
 <br/>
 Feel free to check [issues](https://github.com/Codebrahma/gatsby-theme-blog/issues) page if you want to contribute.
-bug: 
+
 ## :pencil: Licence
  This project is [MIT](https://github.com/Codebrahma/gatsby-theme-blog/blob/master/LICENSE) licensed
 
