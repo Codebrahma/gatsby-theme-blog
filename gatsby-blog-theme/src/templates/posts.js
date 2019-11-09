@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "gatsby";
 import { P, H3, H4, I, Box, Text, HorizontalRule } from "bricks";
 import PlainLink from "../components/link";
@@ -129,16 +129,18 @@ const Posts = ({
 
   return (
     <Layout>
-      <Helmet
-        title={getHeading({
-          isFirstPage,
-          currentPage,
-          totalPages,
-          type,
-          value
-        })}
-      />
-      <H4 css={css({ color: "black.1" })}>
+      <Helmet>
+        <title>
+          {getHeading({
+            isFirstPage,
+            currentPage,
+            totalPages,
+            type,
+            value
+          })}
+        </title>
+      </Helmet>
+      <H4 css={css({ color: theme.colors.black[1] })}>
         {getHeading({
           isFirstPage,
           currentPage,

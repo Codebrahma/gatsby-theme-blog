@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Flex, H1, Box, I } from "bricks";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Helmet } from "react-helmet";
 import CategoryLink from "../components/categorylink";
 import { getCategory, slugify } from "../utils";
 import PlainLink from "../components/link";
@@ -91,6 +92,9 @@ const BlogLayout = props => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <Flex flexWrap="wrap">
         <Box width={["100%", 2 / 3]}>
           <Box mb={4}>
