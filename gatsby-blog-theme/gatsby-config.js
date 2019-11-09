@@ -8,6 +8,12 @@ module.exports = ({ contentPath="posts", basePath="/"  }) => ({
         path: contentPath,
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".md", ".mdx"]
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`
