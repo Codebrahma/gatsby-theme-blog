@@ -25,7 +25,7 @@ const lineHeights = [
 const space = [0, ...lineHeights];
 
 const colors = {
-  tint: "#F8F4F2",
+  tint: "#eee",
   black: ["#0F0F0F", "#333333", "#666666", "#999999"]
 };
 colors.primary = colors.black[1];

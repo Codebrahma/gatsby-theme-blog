@@ -11,7 +11,18 @@ module.exports = ({ contentPath="posts", basePath="/"  }) => ({
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [".md", ".mdx"]
+        typeName: "Post",
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              backgroundColor: "none"
+            }
+          }
+        ],
+        plugins: [`gatsby-remark-images`]
       }
     },
     `gatsby-transformer-sharp`,
