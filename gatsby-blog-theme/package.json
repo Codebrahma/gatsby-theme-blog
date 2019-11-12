@@ -48,5 +48,8 @@
     "gatsby-transformer-sharp": "^2.3.0",
     "react-helmet": "^5.2.1",
     "theme-ui": "^0.2.44"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
