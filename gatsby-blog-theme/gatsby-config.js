@@ -1,4 +1,4 @@
-module.exports = ({ contentPath="posts", basePath="/"  }) => ({
+module.exports = ({ contentPath="posts", basePath="/", mdx=true  }) => ({
   plugins: [
     `gatsby-theme-ui`,
     {
@@ -8,7 +8,7 @@ module.exports = ({ contentPath="posts", basePath="/"  }) => ({
         path: contentPath,
       },
     },
-    {
+    mdx && {
       resolve: `gatsby-plugin-mdx`,
       options: {
         typeName: "Post",
@@ -28,5 +28,5 @@ module.exports = ({ contentPath="posts", basePath="/"  }) => ({
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`
-  ]
+  ].filter(Boolean)
 });
