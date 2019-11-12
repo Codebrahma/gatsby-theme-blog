@@ -10,6 +10,15 @@
 
 :fire: A Gatsby theme for creating a blog.
 
+The theme provides several built-in features to set the bare-minimum for building a blog including:
+
+* Content sourcing and transformation from the filesystem via gatsby-source-filesystem
+* MDX support via gatsby-plugin-mdx
+* Image processing via gatsby-plugin-sharp and gatsby-remark-images
+* Auto creation of individual blog post pages
+* Auto creation of tags/category/author pages
+* Blog list page with Pagination - you specify the number of blogs in a page in the Theme Options.
+
 ## Installation
 ```bash
   npm install @codebrahma/gatsby-theme-blog
