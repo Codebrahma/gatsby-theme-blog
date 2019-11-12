@@ -12,7 +12,7 @@
 
 ## Installation
 ```bash
-  npm install --save @codebrahma/gatsby-theme-blog
+  npm install @codebrahma/gatsby-theme-blog
 ```
 
 ## :rocket: Usage

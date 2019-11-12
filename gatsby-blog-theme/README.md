@@ -21,7 +21,7 @@ The theme provides several built-in features to set the bare-minimum for buildin
 
 ## Installation
 ```bash
-  npm install --save @codebrahma/gatsby-theme-blog
+  npm install @codebrahma/gatsby-theme-blog
 ```
 
 ## :rocket: Usage
