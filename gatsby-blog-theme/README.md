@@ -8,7 +8,16 @@
 </p>
 <h1 align="center">Gatsby Theme Blog</h1>
 
-:fire: A Gatsby theme for creating a blog.
+:fire: A Gatsby blog theme supporting local filesystem content, MDX and image processing.
+
+The theme provides several built-in features to set the bare-minimum for building a blog including:
+
+* Content sourcing and transformation from the filesystem via gatsby-source-filesystem
+* MDX support via gatsby-plugin-mdx
+* Image processing via gatsby-plugin-sharp and gatsby-remark-images
+* Auto creation of individual blog post pages
+* Auto creation of tags/category/author pages
+* Blog list page with Pagination - you specify the number of blogs in a page in the Theme Options.
 
 ## Installation
 ```bash
@@ -132,20 +141,4 @@ Contributions, issues and feature requests are welcome.
 Feel free to check [issues](https://github.com/Codebrahma/gatsby-theme-blog/issues) page if you want to contribute.
 
 ## :pencil: Licence
- This project is [MIT](https://github.com/Codebrahma/gatsby-theme-blog/blob/master/LICENSE) licensed
-
-<hr />
-
-## <u>Development</u>
-
-This a monorepo containing the site and the theme plugin. For development follow the below steps.
-
-* #### Clone the Repo
-```bash
-  git clone git@github.com:Codebrahma/gatsby-theme-blog.git
-```
-
-* #### Start the site server
-```bash
-  yarn workspace site develop
-```
+ This project is [MIT](https://github.com/Codebrahma/gatsby-theme-blog/blob/master/LICENSE) licensed.
