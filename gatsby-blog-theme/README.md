@@ -28,12 +28,13 @@ The theme provides several built-in features to set the bare-minimum for buildin
 
 ### Theme Options
 
-|Key            | Default Value | Description                                                                                           |
-|---------------|---------------|-------------------------------------------------------------------------------------------------------|
-|`basePath`     | `"/blog"`     | Root URL to all blog posts                                                                            |
-|`contentPath`  | `"posts"`     | Location of blog posts                                                                                |
-|`itemsPerPage` | `7`           | Number of items per page                                                                              |
+|Key            | Default Value | Description                                                                                             |
+|---------------|---------------|---------------------------------------------------------------------------------------------------------|
+|`basePath`     | `"/blog"`     | Root URL to all blog posts                                                                              |
+|`contentPath`  | `"posts"`     | Location of blog posts                                                                                  |
+|`itemsPerPage` | `7`           | Number of items per page                                                                                |
 |`mdx`          | `true`        | Configure gatsby-plugin-mdx (if your website already is using the plugin pass `false` to turn this off) |
+
 ### Example Usage
 ```js
 // gatsby-config.js
