@@ -2,12 +2,20 @@
   "title": "Gatsby Theme Blog",
   "name": "@codebrahma/gatsby-theme-blog",
   "description": "A Gatsby theme for creating a blog.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "index.js",
   "author": "Codebrahma",
   "contributors": [
     "Sachin Jadhav (https://sachinjadhav.in/)"
+  ],
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin",
+    "react",
+    "blog",
+    "markdown"
   ],
   "scripts": {
     "build": "gatsby build",
