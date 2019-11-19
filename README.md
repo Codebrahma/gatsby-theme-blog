@@ -159,3 +159,5 @@ This a monorepo containing the site and the theme plugin. For development follow
 ```bash
   yarn workspace site develop
 ```
+
+This project is inspired from https://github.com/jlengstorf/gatsby-theme-jason-blog
