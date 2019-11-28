@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-blog-theme`,
+      resolve: `@codebrahma/gatsby-theme-blog`,
       options: {
         contentPath: 'posts',
         itemsPerPage: 3

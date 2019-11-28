@@ -1,31 +1,10 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react'
+import CategoryLink from "../../components/categorylink";
+import { getCategory, slugify } from "../../utils";
+import PlainLink from "../../components/link";
 import { Flex, H1, Box, I } from "bricks";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Helmet } from "react-helmet";
-import CategoryLink from "../components/categorylink";
-import { getCategory, slugify } from "../utils";
-import PlainLink from "../components/link";
-import Layout from "../components/layout";
 
-export const query = graphql`
-  query($link: String!) {
-    post: mdx(frontmatter: { link: { eq: $link } }) {
-      body
-      frontmatter {
-        title
-        description
-        category
-        tags
-        author
-        keywords
-        datePublished: date(formatString: "YYYY-MM-DDTHH:mm:ssZ")
-      }
-    }
-  }
-`;
-
-const Sidebar = ({ author, category, tags }) => (
+export const Sidebar = ({ author, category, tags }) => (
   <div>
     <Box my={2}>
       <Flex fontSize={[0, 0]} justifyContent="center">
@@ -86,51 +65,3 @@ const Sidebar = ({ author, category, tags }) => (
     </Flex>
   </div>
 );
-
-const BlogLayout = props => {
-  const { title, body, category, author, tags } = props;
-
-  return (
-    <Layout>
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
-      <Flex flexWrap="wrap">
-        <Box width={["100%", 2 / 3]}>
-          <Box mb={4}>
-            <H1>{title}</H1>
-          </Box>
-          <MDXRenderer>{body}</MDXRenderer>
-        </Box>
-        <Box width={["100%", 1 / 3]} marginTop={[1, 5]}>
-          <Sidebar author={author} category={category} tags={tags} />
-        </Box>
-      </Flex>
-    </Layout>
-  );
-};
-
-const Post = props => {
-  let {
-    title,
-    category,
-    tags,
-    author,
-    keywords,
-    description
-  } = props.data.post.frontmatter;
-  let body = props.data.post.body;
-  return (
-    <BlogLayout
-      title={title}
-      category={category}
-      tags={tags}
-      author={author}
-      body={body}
-      keywords={keywords}
-      description={description}
-    />
-  );
-};
-
-export default Post;

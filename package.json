@@ -1,7 +1,4 @@
 {
   "private": true,
-  "workspaces": [
-    "gatsby-blog-theme",
-    "site"
-  ]
+  "workspaces": ["site", "@codebrahma/gatsby-theme-blog"]
 }
