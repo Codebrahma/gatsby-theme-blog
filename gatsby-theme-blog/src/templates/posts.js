@@ -47,14 +47,16 @@ const ReadPostLink = styled(Link)(
     borderRadius: "3px",
     p: "2px",
     display: "inline-block",
+    color: `${theme.colors.primary}`,
     "&:hover": {
-      bg: `${theme.colors.black[1]}`,
-      color: `${theme.colors.tint}`
+      bg: `${theme.colors.primary}`,
+      color: `${theme.colors.secondary}`
     },
     ":visited": {
+      color: `${theme.colors.primary}`,
       "&:hover": {
-        bg: `${theme.colors.black[1]}`,
-        color: `${theme.colors.tint}`
+        bg: `${theme.colors.primary}`,
+        color: `${theme.colors.secondary}`
       }
     }
   })
@@ -72,6 +74,7 @@ const HeadingLink = styled(Link)(
     borderRadius: "5px",
     display: "inline-block",
     textDecoration: "none",
+    color: `${theme.colors.primary}`,
     "&:hover": {
       backgroundColor: `${theme.colors.primary}`,
       color: `${theme.colors.secondary}`
