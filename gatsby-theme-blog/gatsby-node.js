@@ -114,7 +114,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const result = await graphql(`
     {
       posts: allMdx(
-        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         nodes {
