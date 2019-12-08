@@ -8,7 +8,7 @@
 </p>
 <h1 align="center">Gatsby Theme Blog</h1>
 
-:fire: A Gatsby theme for creating a blog.
+:fire: A Gatsby theme for creating a blog with tags and categories support.
 
 The theme provides several built-in features to set the bare-minimum for building a blog including:
 
