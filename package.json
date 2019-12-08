@@ -1,7 +1,0 @@
-{
-  "private": true,
-  "workspaces": [
-    "gatsby-blog-theme",
-    "site"
-  ]
-}

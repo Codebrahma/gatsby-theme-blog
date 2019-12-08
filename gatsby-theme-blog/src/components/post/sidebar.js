@@ -2,7 +2,7 @@ import React from 'react'
 import CategoryLink from "../../components/categorylink";
 import { getCategory, slugify } from "../../utils";
 import PlainLink from "../../components/link";
-import { Flex, H1, Box, I } from "bricks";
+import { Flex, Box, I } from "bricks";
 
 export const Sidebar = ({ author, category, tags }) => (
   <div>

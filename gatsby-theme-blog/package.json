@@ -2,12 +2,13 @@
   "title": "Gatsby Theme Blog",
   "name": "@codebrahma/gatsby-theme-blog",
   "description": "A Gatsby theme for creating a blog.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "main": "index.js",
   "author": "Codebrahma",
   "contributors": [
-    "Sachin Jadhav (https://sachinjadhav.in/)"
+    "Sachin Jadhav (https://sachinjadhav.in/)",
+    "Anand Narayan (https://codeanand.com)"
   ],
   "keywords": [
     "gatsby",
