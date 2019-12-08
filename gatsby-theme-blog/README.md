@@ -6,6 +6,7 @@
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
   </a>
 </p>
+
 <h1 align="center">Gatsby Theme Blog</h1>
 
 :fire: A Gatsby blog theme supporting local filesystem content, MDX and image processing.
@@ -78,6 +79,7 @@ author: Codebrahma
 tags:
 - gatsby
 - react
+templateKey: blog-post
 ---
 
 Hello World! This is my first post! I'll have great features enabled by default, including:
