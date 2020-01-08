@@ -13,6 +13,9 @@ export const query = graphql`
         tags
         author
         keywords
+        image {
+          publicURL
+        }
         datePublished: date(formatString: "YYYY-MM-DDTHH:mm:ssZ")
       }
     }
@@ -27,7 +30,8 @@ const Post = props => {
     tags,
     author,
     keywords,
-    description
+    description,
+    image,
   } = props.data.post.frontmatter;
   let body = props.data.post.body;
   return (
@@ -39,6 +43,7 @@ const Post = props => {
       body={body}
       keywords={keywords}
       description={description}
+      image={image}
     />
   );
 };

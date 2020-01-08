@@ -125,6 +125,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
             category
             link
             author
+            image {
+              publicURL
+            }
             date
           }
         }

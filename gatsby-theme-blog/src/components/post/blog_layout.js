@@ -3,16 +3,23 @@ import { Flex, H1, Box, } from "bricks";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Helmet } from "react-helmet";
 import Layout from "../../components/layout";
+import SEO from '../seo';
 import {Sidebar} from './sidebar'
 
 export const BlogLayout = props => {
-  const { title, body, category, author, tags } = props;
+  const { title, body, category, author, tags, description, keywords, image} = props;
 
   return (
     <Layout>
       <Helmet>
         <title>{title}</title>
       </Helmet>
+      <SEO
+        title={title}
+        description={description}
+        keywords={keywords}
+        image={image ? image.imageURL : ''}
+      />
       <Flex flexWrap="wrap">
         <Box width={["100%", 2 / 3]}>
           <Box mb={4}>
