@@ -17,7 +17,7 @@ function SEO({
   keywords,
   title,
   canonical,
-  imageURL,
+  image,
   link
 }) {
   const { site } = useStaticQuery(
@@ -69,11 +69,11 @@ function SEO({
           property: `og:type`,
           content: `website`
         },
-        ...(siteBaseUrl && imageURL
+        ...(siteBaseUrl && image
           ? [
               {
                 property: `og:image`,
-                content: `${siteBaseUrl}${imageURL}`
+                content: `${siteBaseUrl}${image}`
               }
             ]
           : []),
@@ -120,7 +120,7 @@ SEO.defaultProps = {
   meta: [],
   keywords: [],
   description: ``,
-  imageURL: "",
+  image: "",
   link: ""
 };
 
@@ -131,7 +131,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
-  imageURL: PropTypes.string,
+  image: PropTypes.string,
   link: PropTypes.string
 };
 
