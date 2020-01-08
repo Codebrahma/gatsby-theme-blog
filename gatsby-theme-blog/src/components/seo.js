@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 function SEO({
   description,
@@ -18,7 +18,7 @@ function SEO({
   title,
   canonical,
   imageURL,
-  url,
+  link
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -33,9 +33,9 @@ function SEO({
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
   const siteBaseUrl = site.siteMetadata.siteUrl;
 
   return (
@@ -44,71 +44,75 @@ function SEO({
         canonical ? [{ rel: "canonical", key: canonical, href: canonical }] : []
       }
       htmlAttributes={{
-        lang,
+        lang
       }}
       title={title}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: metaDescription
         },
         {
           name: `ahrefs-site-verification`,
-          content: `4dd117a5c522115a6aa883a771053c24404e9c9e31c411ef8e3698eab7b65aa6`,
+          content: `4dd117a5c522115a6aa883a771053c24404e9c9e31c411ef8e3698eab7b65aa6`
         },
         {
           property: `og:title`,
-          content: title,
+          content: title
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: metaDescription
         },
 
         {
           property: `og:type`,
-          content: `website`,
+          content: `website`
         },
         ...(siteBaseUrl && imageURL
           ? [
               {
                 property: `og:image`,
-                content: `${siteBaseUrl}${imageURL}`,
-              },
+                content: `${siteBaseUrl}${imageURL}`
+              }
+            ]
+          : []),
+        ...(siteBaseUrl && link
+          ? [
+              {
+                property: `og:url`,
+                content: `${siteBaseUrl}${link}`
+              }
             ]
           : []),
         {
-          property: `og:url`,
-          content: url,
-        },
-        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary`
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.author
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
-        },
+          content: metaDescription
+        }
       ]
         .concat(
           keywords && keywords.length > 0
             ? {
                 name: `keywords`,
-                content: keywords.join(`, `),
+                content: keywords.join(`, `)
               }
             : []
         )
         .concat(meta)}
     />
-  )
+  );
 }
 
 SEO.defaultProps = {
@@ -117,8 +121,8 @@ SEO.defaultProps = {
   keywords: [],
   description: ``,
   imageURL: "",
-  url: "",
-}
+  link: ""
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
@@ -128,7 +132,7 @@ SEO.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
   imageURL: PropTypes.string,
-  url: PropTypes.string,
-}
+  link: PropTypes.string
+};
 
-export default SEO
+export default SEO;

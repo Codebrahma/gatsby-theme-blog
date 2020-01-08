@@ -13,6 +13,7 @@ export const query = graphql`
         tags
         author
         keywords
+        link
         image {
           publicURL
         }
@@ -31,6 +32,7 @@ const Post = props => {
     author,
     keywords,
     description,
+    link,
     image,
   } = props.data.post.frontmatter;
   let body = props.data.post.body;
@@ -43,6 +45,7 @@ const Post = props => {
       body={body}
       keywords={keywords}
       description={description}
+      link={link}
       image={image}
     />
   );

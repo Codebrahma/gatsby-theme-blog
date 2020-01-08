@@ -7,7 +7,7 @@ import SEO from '../seo';
 import {Sidebar} from './sidebar'
 
 export const BlogLayout = props => {
-  const { title, body, category, author, tags, description, keywords, image} = props;
+  const { title, body, category, author, tags, description, keywords, link, image} = props;
 
   return (
     <Layout>
@@ -18,6 +18,7 @@ export const BlogLayout = props => {
         title={title}
         description={description}
         keywords={keywords}
+        link={link}
         image={image ? image.imageURL : ''}
       />
       <Flex flexWrap="wrap">
