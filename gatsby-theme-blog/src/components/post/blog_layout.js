@@ -19,7 +19,7 @@ export const BlogLayout = props => {
         description={description}
         keywords={keywords}
         link={link}
-        image={image ? image.imageURL : ''}
+        image={image ? image.publicURL : ''}
       />
       <Flex flexWrap="wrap">
         <Box width={["100%", 2 / 3]}>
