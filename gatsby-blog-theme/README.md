@@ -133,7 +133,6 @@ const Layout = ({ children }) => {
   )
 }
 ```
-<hr />
 
 ## :handshake: Contributing
 

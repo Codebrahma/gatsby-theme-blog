@@ -114,11 +114,11 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   const result = await graphql(`
     {
       posts: allMdx(
-        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         nodes {
           id
+          
           frontmatter {
             title
             description
@@ -178,7 +178,7 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
       pathTemplate: `${basePath}/pgnum/`,
       type: "all",
       value: null,
-      itemsPerPage
+      itemsPerPage,
     },
     posts.sort(
       (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)

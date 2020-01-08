@@ -20,9 +20,19 @@ module.exports = ({ contentPath="posts", basePath="/", mdx=true  }) => ({
               maxWidth: 1035,
               backgroundColor: "none"
             }
-          }
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              showLineNumbers: false,
+            },
+          },
         ],
-        plugins: [`gatsby-remark-images`]
       }
     },
     `gatsby-transformer-sharp`,
