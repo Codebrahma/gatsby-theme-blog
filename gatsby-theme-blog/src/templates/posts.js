@@ -10,34 +10,37 @@ import Layout from "../components/layout";
 import Pagination from "../components/pagination";
 import { getCategory, getTags, slugify } from "../utils";
 import CategoryLink from "../components/categorylink";
+import SEO from "../components/seo";
 import theme from "../theme";
 
 const isLast = (arr, index) => arr.length - 1 === index;
 
-const getHeading = ({
+const getHeadingAndDescription = ({
   isFirstPage,
   currentPage,
   totalPages,
   type,
-  value
+  value,
+  siteMetadata
 }) => {
   if (type === "category" && value) {
-    return `Posts in the category “${value}”`;
+    return [`Posts in the category “${value}”`, `Check this page out for the blogs that fall under "${value}"`];
   }
 
   if (["tags", "tag"].includes(type) && value) {
-    return `Posts tagged with “${value}”`;
+    return [`Posts tagged with “${value}”`, `Check this page out for the blogs that fall under "${value}"`];
   }
 
   if (type === "all" && isFirstPage) {
-    return "Latest Blog Posts";
+    return [`Latest Blog Posts`, siteMetadata.description];
   }
 
   if (type === "author" && value) {
-    return `Posts written by ${value.split("-").join(" ")}`;
+    const author = value.split("-").join(" ");
+    return [`Posts written by ${author}`, `Check this page out for the blogs that are written by ${author}`];
   }
 
-  return `Blog Posts, page ${currentPage} of ${totalPages}`;
+  return [`Blog Posts, page ${currentPage} of ${totalPages}`, siteMetadata.description];
 };
 
 const ReadPostLink = styled(Link)(
@@ -116,6 +119,19 @@ const Blog = ({ frontmatter }) => (
   </Box>
 );
 
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+  }
+`;
+
 const Posts = ({
   pageContext: {
     postGroup,
@@ -126,31 +142,33 @@ const Posts = ({
     linkBase,
     type,
     value
-  }
+  },
+  data = {},
 }) => {
   let blogs = postGroup;
+  const siteMetadata = data.site ? data.site.siteMetadata : {}
+  const [title, description] = getHeadingAndDescription({
+    isFirstPage,
+    currentPage,
+    totalPages,
+    type,
+    value,
+    siteMetadata
+  });
 
   return (
     <Layout>
       <Helmet>
         <title>
-          {getHeading({
-            isFirstPage,
-            currentPage,
-            totalPages,
-            type,
-            value
-          })}
+          {title}
         </title>
       </Helmet>
+      <SEO
+        title={siteMetadata.title ? `${title} | ${siteMetadata.title}` : title}
+        description={description}
+      />
       <H4 css={css({ color: theme.colors.black[1] })}>
-        {getHeading({
-          isFirstPage,
-          currentPage,
-          totalPages,
-          type,
-          value
-        })}
+        {title}
       </H4>
       <Box marginTop={6} width={[1, 2 / 3]}>
         {blogs.map((blog, i) => (
