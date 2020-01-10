@@ -2,7 +2,7 @@
   "title": "Gatsby Theme Blog",
   "name": "@codebrahma/gatsby-theme-blog",
   "description": "A Gatsby theme for creating a blog.",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "license": "MIT",
   "main": "index.js",
   "author": "Codebrahma",
