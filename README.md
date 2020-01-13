@@ -76,6 +76,7 @@ link: /hello-world
 category:
 - Gatsby
 author: Codebrahma
+image: ./image.png
 tags:
 - gatsby
 - react
@@ -135,12 +136,10 @@ const Layout = ({ children }) => {
   )
 }
 ```
-<hr />
 
 ## :handshake: Contributing
 
 Contributions, issues and feature requests are welcome.
-<br/>
 Feel free to check [issues](https://github.com/Codebrahma/gatsby-theme-blog/issues) page if you want to contribute.
 
 ## :pencil: Licence
