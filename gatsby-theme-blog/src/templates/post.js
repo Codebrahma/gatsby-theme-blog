@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import {BlogLayout} from '../components/post/blog_layout'
+import { BlogLayout } from "../components/post/blog_layout";
 
 export const query = graphql`
   query($link: String!) {
@@ -23,7 +23,6 @@ export const query = graphql`
   }
 `;
 
-
 const Post = props => {
   let {
     title,
@@ -34,8 +33,10 @@ const Post = props => {
     description,
     link,
     image,
+    datePublished
   } = props.data.post.frontmatter;
   let body = props.data.post.body;
+
   return (
     <BlogLayout
       title={title}
@@ -47,6 +48,7 @@ const Post = props => {
       description={description}
       link={link}
       image={image}
+      datePublished={datePublished}
     />
   );
 };
