@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
+import { normalizeUrl } from '../utils';
 
 const Wrapper = styled("div")`
   display: flex;
@@ -38,9 +39,7 @@ const Pagination = ({
     )}
     {!isFirstPage && (
       <PaginationLink
-        to={`${linkBase}/${
-          currentPage - 1 === 1 ? "" : "/page/" + (currentPage - 1)
-        }/`}
+        to={normalizeUrl(`${linkBase}/${currentPage - 1 === 1 ? "" : "/page/" + (currentPage - 1)}/`)}
       >
         ‹ newer posts
       </PaginationLink>
@@ -48,14 +47,14 @@ const Pagination = ({
     {!isLastPage && (
       <PaginationLink
         className="moveRight"
-        to={`${linkBase}/page/${currentPage + 1}/`}
+        to={normalizeUrl(`${linkBase}/page/${currentPage + 1}/`)}
       >
         older posts ›
       </PaginationLink>
     )}
     {!isLastPage && currentPage !== totalPages - 1 && (
       <PaginationLink
-        to={`${linkBase}/page/${totalPages}/`}
+        to={normalizeUrl(`${linkBase}/page/${totalPages}/`)}
         title="jump to oldest posts"
       >
         <span className="screen-reader-text">oldest posts</span> »

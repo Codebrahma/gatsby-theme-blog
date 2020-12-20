@@ -16,3 +16,4 @@ export const getTags = (frontmatter)=>{
 export const isLast = (arr, index)=> arr.length-1 === index
 export const hypenize = (value) => value.replace(/\.|\s/g, '-')
 export const slugify = (value) => hypenize(value).toLowerCase()
+export const normalizeUrl = (value) => value.replace(/([^:]\/)\/+/g, "$1")
