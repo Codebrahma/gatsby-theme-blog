@@ -97,7 +97,7 @@ const createPages = (type, postArray, createPage) => {
       {
         createPage,
         component: require.resolve("./src/templates/posts.js"),
-        pathTemplate: `${type}/${typeValue}/pgnum/`,
+        pathTemplate: `/${type}/${typeValue}/pgnum/`,
         type,
         value: typeValue
       },
